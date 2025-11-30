@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JGp5t9SlY80=",
+  "dgSpecHash": "R29d83fWmXg=",
   "success": true,
-  "projectFilePath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere\\ShopSphere.Api\\ShopSphere.Api.csproj",
+  "projectFilePath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

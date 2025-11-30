@@ -20,3 +20,15 @@ C:\Users\ACER\Downloads\Project\ShopSphere\ShopSphere.Domain\obj\Debug\net9.0\Sh
 C:\Users\ACER\Downloads\Project\ShopSphere\ShopSphere.Domain\obj\Debug\net9.0\refint\ShopSphere.Domain.dll
 C:\Users\ACER\Downloads\Project\ShopSphere\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.pdb
 C:\Users\ACER\Downloads\Project\ShopSphere\ShopSphere.Domain\obj\Debug\net9.0\ref\ShopSphere.Domain.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\bin\Debug\net9.0\ShopSphere.Domain.deps.json
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\bin\Debug\net9.0\ShopSphere.Domain.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\bin\Debug\net9.0\ShopSphere.Domain.pdb
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.AssemblyInfoInputs.cache
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.AssemblyInfo.cs
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.csproj.CoreCompileInputs.cache
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.sourcelink.json
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\refint\ShopSphere.Domain.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ShopSphere.Domain.pdb
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Domain\obj\Debug\net9.0\ref\ShopSphere.Domain.dll

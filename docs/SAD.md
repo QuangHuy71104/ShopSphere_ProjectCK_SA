@@ -56,3 +56,106 @@ flowchart LR
 
   ShopSphere --> Pay[Payment Gateway (Mock)]
   ShopSphere --> Noti[Email/SMS Service (Mock)]
+```
+
+---
+
+## 4. C4 Container Diagram (Level 2)
+Containers chính của hệ thống:
+
+1. **ShopSphere Web API (.NET 9)**
+   - REST endpoints cho Catalog (Sub1).
+   - Sẽ mở rộng cho Cart/Order/Payment.
+
+2. **SQL Server Database**
+   - Lưu dữ liệu Product, Category.
+   - Sẽ mở rộng sang Order/Payment/Outbox tables.
+
+3. **Redis Cache (Sub2)**
+   - Cache các endpoint đọc-heavy của catalog.
+
+4. **RabbitMQ (Sub2)**
+   - Event bus cho các domain events.
+
+5. **Worker Service (Sub3)**
+   - Publish outbox events.
+   - Consumers + Saga coordination.
+
+```mermaid
+flowchart TB
+  Client[Web/Mobile/Admin Client] --> API[ShopSphere Web API\nASP.NET Core]
+  API --> DB[(SQL Server)]
+  API -.cache(Sub2).-> Redis[(Redis)]
+  API -.events(Sub2).-> MQ[(RabbitMQ)]
+  Worker[Background Worker\n(Sub3)] -.consume/publish.-> MQ
+  Worker --> DB
+```
+
+---
+
+## 5. Architecture Strategy
+
+### 5.1 Layered Clean Architecture
+- **Domain**: Entities (Product, Category), enums, domain rules.
+- **Application**: Services/use-cases, interfaces cho repositories.
+- **Infrastructure**: EF Core DbContext, repository implementations.
+- **API**: Controllers, request/response contracts.
+
+### 5.2 Module Boundaries (Modular Monolith)
+- **Catalog Module (Sub1)**:
+  - Product, Category, Inventory (inventory triển khai sau).
+- **Cart Module (Sub3)**:
+  - Cart, CartItem.
+- **Order Module (Sub3)**:
+  - Order, OrderItem.
+- **Payment Module (Sub3)**:
+  - Payment.
+- **Async/Reliability (Sub2–3)**:
+  - RabbitMQ, Outbox, Saga.
+
+Mỗi module được phát triển độc lập trong cùng monolith, đảm bảo không phụ thuộc ngược vào Infrastructure.
+
+---
+
+## 6. Domain Model Summary (Submission 1)
+
+### 6.1 Entities
+**Category**
+- id, name, slug
+- parentId (nullable)
+- createdAt, updatedAt
+
+**Product**
+- id, name, slug, description
+- price (decimal)
+- status (ACTIVE/INACTIVE)
+- categoryId (FK)
+- createdAt, updatedAt
+
+### 6.2 Relationships
+- Category 1–N Product.
+- Category có quan hệ parent-child (self reference).
+
+ERD chi tiết được cung cấp trong `docs/erd.png`.
+
+---
+
+## 7. Future Evolution (Submission 2–3)
+- **Submission 2:** thêm JWT authentication + role-based authorization ở API layer; thêm Redis caching cho các endpoint đọc-heavy của Catalog; tích hợp RabbitMQ và publish các domain events cơ bản (ví dụ ProductCreated/ProductUpdated).
+- **Submission 3:** triển khai **Outbox pattern** trong Infrastructure để đảm bảo event publishing tin cậy; tách **Worker Service** để publish outbox và chạy consumers; bổ sung **Idempotency** cho consumers; xây dựng **Saga checkout** điều phối nhiều bước Order → Payment → Confirm/Cancel; áp dụng API versioning `/v1`.
+
+---
+
+## 8. Key Architectural Decisions (Summary)
+- Chọn stack **.NET 9 + EF Core + SQL Server + Redis + RabbitMQ** để phù hợp yêu cầu backend, caching, async và reliability.
+- Áp dụng **Clean Architecture + Modular Monolith** để phát triển nhanh trong Sub1, nhưng vẫn giữ ranh giới module rõ ràng cho event-driven evolution ở Sub2–3.
+
+---
+
+## 9. Submission 1 Deliverables Mapping
+- Vision & Scope: `/deliverables/submission1/Vision-Scope.md`
+- SAD Context + Container + Quality: `/docs/SAD.md`
+- ERD: `/docs/erd.png`
+- Working CRUD code:
+  - Product CRUD
+  - Category CRUD

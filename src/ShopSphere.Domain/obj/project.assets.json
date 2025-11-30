@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
+      "projectUniqueName": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
       "projectName": "ShopSphere.Domain",
-      "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
+      "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere\\ShopSphere.Domain\\obj\\",
+      "outputPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
