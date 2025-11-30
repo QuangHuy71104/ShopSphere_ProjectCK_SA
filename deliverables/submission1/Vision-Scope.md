@@ -64,7 +64,7 @@ Triển khai 2 nhóm CRUD endpoints cho:
 - C4 Container diagram.
 - Thiết kế ERD cho Product–Category.
 - ORM mapping bằng EF Core.
-- Migrations chạy được trên SQL Server.
+- Migrations chạy được trên **SQL Server**.
 
 ---
 
@@ -82,7 +82,7 @@ Chúng sẽ được thực hiện ở Submission 2 và Submission 3.
 
 ## 6. Assumptions & Constraints
 - Hệ thống phục vụ cho một storefront (single tenant).
-- Sử dụng cơ sở dữ liệu quan hệ (SQL Server).
+- Sử dụng cơ sở dữ liệu quan hệ **SQL Server**.
 - API backend là nguồn dữ liệu chính, client không truy cập DB trực tiếp.
 - Các dịch vụ ngoài (payment/notification) ở giai đoạn sau có thể dùng mock.
 

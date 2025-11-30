@@ -1,16 +1,15 @@
-
----
-
-## 3) `/docs/ADRs/ADR-001-stack-choice.md`
-
-```md
 # ADR-001: Technology Stack Choice
 
 ## Context
-Project yêu cầu xây dựng backend large-scale, có authentication, caching và asynchronous messaging trong các milestone sau. Team cần stack phổ biến, dễ phát triển nhanh, hỗ trợ tốt cho Clean Architecture, ORM, caching và message broker.
+Dự án ShopSphere yêu cầu xây dựng một backend quy mô lớn, tiến hóa qua 3 milestone:
+- Sub1: nền tảng kiến trúc + data layer + CRUD catalog
+- Sub2: authentication, caching, async messaging
+- Sub3: reliability (outbox), consistency, saga orchestration
+
+Team cần stack phổ biến, hỗ trợ REST API, ORM + migrations tốt, caching cho catalog đọc-heavy và message broker cho event-driven.
 
 ## Decision
-Chọn stack:
+Chọn stack chính:
 - **.NET 9 (ASP.NET Core Web API)**
 - **EF Core**
 - **SQL Server**
@@ -18,13 +17,15 @@ Chọn stack:
 - **RabbitMQ**
 
 ## Rationale
-- ASP.NET Core Web API hỗ trợ REST chuẩn, middleware mạnh, dễ tách layer.
-- EF Core tích hợp tốt với SQL Server, migration nhanh, phù hợp cho schema evolving theo milestone.
-- Redis là lựa chọn chuẩn cho cache read-heavy catalog.
-- RabbitMQ phù hợp cho event-driven, hỗ trợ retry/DLQ rõ ràng, dễ làm outbox/saga ở Sub3.
-- Stack này đáp ứng đúng focus của đề (Backend, Auth, Data, Caching, Async Messaging).
+- **ASP.NET Core Web API (.NET 9)**: middleware/DI mạnh, phù hợp clean architecture và phát triển nhanh.
+- **EF Core**: code-first dễ evolve schema theo milestone, mapping linh hoạt.
+- **SQL Server**: CSDL quan hệ ổn định, phù hợp mô hình e-commerce (product, order, payment).
+- **Redis**: tối ưu hiệu năng cho các endpoint đọc-heavy của catalog ở Sub2.
+- **RabbitMQ**: hỗ trợ retry/DLQ rõ ràng, phù hợp cho event-driven, outbox và saga ở Sub2–3.
 
 ## Consequences
-- Team cần tuân thủ strict layering để tránh coupling vào EF trong domain/application.
-- Cần docker-compose cho local dev gồm SQL Server, Redis, RabbitMQ.
-- Sau Sub1, phải bổ sung auth + cache + MQ mà không phá vỡ kiến trúc clean đã chọn.
+- Domain/Application không phụ thuộc trực tiếp EF Core; chỉ dùng interfaces.
+- Migrations được quản lý bằng EF Core và lưu tại **`/db/migrations`** theo yêu cầu đề bài.
+- Local dev dùng Docker cho SQL Server/Redis/RabbitMQ; connection string dev cần:
+  `TrustServerCertificate=True;Encrypt=False` để tránh lỗi TLS.
+- Các milestone sau phải mở rộng theo boundaries đã chốt để không phá vỡ kiến trúc.
