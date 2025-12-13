@@ -1,0 +1,16 @@
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\bin\Development\net9.0\ShopSphere.Application.deps.json
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\bin\Development\net9.0\ShopSphere.Application.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\bin\Development\net9.0\ShopSphere.Application.pdb
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\bin\Development\net9.0\ShopSphere.Domain.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\bin\Development\net9.0\ShopSphere.Domain.pdb
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.csproj.AssemblyReference.cache
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.AssemblyInfoInputs.cache
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.AssemblyInfo.cs
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.csproj.CoreCompileInputs.cache
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.sourcelink.json
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphe.CB9458DB.Up2Date
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\refint\ShopSphere.Application.dll
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ShopSphere.Application.pdb
+D:\University\SOFTWARE_ARCHITECTURE\ShopSphere_ProjectCK_SA\src\ShopSphere.Application\obj\Development\net9.0\ref\ShopSphere.Application.dll
