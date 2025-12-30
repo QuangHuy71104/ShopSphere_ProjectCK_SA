@@ -1,5 +1,7 @@
 namespace ShopSphere.Domain.Entities;
 
+using System.Text.Json.Serialization;
+
 public class Category
 {
     public Guid Id { get; set; } = Guid.NewGuid();
@@ -8,7 +10,9 @@ public class Category
 
 
     public Guid? ParentId { get; set; }
+    [JsonIgnore]
     public Category? Parent { get; set; }
+    [JsonIgnore]
     public ICollection<Category> Children { get; set; } = new List<Category>();
 
 
@@ -17,5 +21,6 @@ public class Category
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
+    [JsonIgnore]
     public ICollection<Product> Products { get; set; } = new List<Product>();
 }

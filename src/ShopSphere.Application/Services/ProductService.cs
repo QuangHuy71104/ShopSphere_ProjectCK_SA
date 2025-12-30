@@ -27,6 +27,21 @@ public class ProductService
         return slug;
     }
 
+    private async Task<string> EnsureUniqueSlugAsync(string baseSlug, Guid? ignoreProductId = null)
+    {
+        var slug = baseSlug;
+        var counter = 2;
+
+        while (true)
+        {
+            var owner = await _productRepo.GetBySlugAsync(slug);
+            if (owner == null || (ignoreProductId.HasValue && owner.Id == ignoreProductId.Value))
+                return slug;
+
+            slug = $"{baseSlug}-{counter++}";
+        }
+    }
+
     public async Task<Product> CreateAsync(string name, decimal price, int stock, Guid categoryId)
     {
         if (string.IsNullOrWhiteSpace(name))
@@ -38,10 +53,7 @@ public class ProductService
         if (cat == null)
             throw new BadRequestException("CategoryId does not exist.");
 
-        var slug = Slugify(name);
-        var exists = await _productRepo.GetBySlugAsync(slug);
-        if (exists != null)
-            throw new BadRequestException("Slug already exists.");
+        var slug = await EnsureUniqueSlugAsync(Slugify(name));
 
         var product = new Product
         {
@@ -95,10 +107,7 @@ public class ProductService
         if (cat == null)
             throw new BadRequestException("CategoryId does not exist.");
 
-        var newSlug = Slugify(name);
-        var slugOwner = await _productRepo.GetBySlugAsync(newSlug);
-        if (slugOwner != null && slugOwner.Id != id)
-            throw new BadRequestException("Slug already exists.");
+        var newSlug = await EnsureUniqueSlugAsync(Slugify(name), id);
 
         p.Name = name.Trim();
         p.Slug = newSlug;

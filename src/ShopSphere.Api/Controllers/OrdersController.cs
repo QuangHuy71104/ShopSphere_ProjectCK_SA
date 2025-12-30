@@ -23,8 +23,8 @@ public class OrdersController : ControllerBase
     [HttpPost("checkout")]
     public async Task<IActionResult> Checkout([FromBody] CheckoutRequestDto dto, CancellationToken cancellationToken)
     {
-        var order = await _checkoutService.StartCheckoutAsync(dto.BuyerEmail, dto.TotalAmount, cancellationToken);
-        return Accepted(new CheckoutResponseDto(order.Id, order.BuyerEmail, order.TotalAmount, order.Status.ToString()));
+        var order = await _checkoutService.StartCheckoutAsync(dto.BuyerEmail, dto.ProductId, dto.Quantity, cancellationToken);
+        return Accepted(new CheckoutResponseDto(order.Id, order.BuyerEmail, dto.ProductId, dto.Quantity, order.TotalAmount, order.Status.ToString()));
     }
 
     [Authorize(Policy = "RequireAuthenticated")]
@@ -50,7 +50,7 @@ public class OrdersController : ControllerBase
         try
         {
             var order = await _checkoutService.GetAsync(id, cancellationToken);
-            return Ok(new CheckoutResponseDto(order.Id, order.BuyerEmail, order.TotalAmount, order.Status.ToString()));
+            return Ok(new CheckoutResponseDto(order.Id, order.BuyerEmail, Guid.Empty, 0, order.TotalAmount, order.Status.ToString()));
         }
         catch (NotFoundException)
         {
