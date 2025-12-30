@@ -7,11 +7,13 @@ using Microsoft.Extensions.Options;
 using ShopSphere.Api.DTOs;
 using ShopSphere.Application.Caching;
 using ShopSphere.Application.Services;
+using Asp.Versioning;
 
 namespace ShopSphere.Api.Controllers;
 
 [ApiController]
-[Route("products")]
+[ApiVersion("1.0")]
+[Route("v1/products")]
 public class ProductsController : ControllerBase
 {
     private readonly ProductService _service;

@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -13,11 +14,19 @@ using ShopSphere.Infrastructure.Auth;
 using ShopSphere.Infrastructure.Messaging;
 using ShopSphere.Infrastructure.Repositories;
 using ShopSphere.Infrastructure.db;
+using Asp.Versioning;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+});
 
 builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection("Auth"));
 builder.Services.Configure<RabbitMqOptions>(builder.Configuration.GetSection("RabbitMq"));
@@ -63,11 +72,15 @@ builder.Services.AddDbContext<ShopSphereDbContext>(opt =>
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+builder.Services.AddScoped<IOutboxRepository, OutboxRepository>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<CheckoutService>();
 builder.Services.AddSingleton<IUserStore, InMemoryUserStore>();
 builder.Services.AddSingleton<ITokenService, JwtTokenService>();
-builder.Services.AddSingleton<IEventPublisher, RabbitMqEventPublisher>();
+builder.Services.AddScoped<IEventPublisher, OutboxEventPublisher>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -95,12 +108,17 @@ builder.Services.AddAuthorization(options =>
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ShopSphereDbContext>();
+    db.Database.Migrate();
+}
+
 
 app.UseSwagger();
 
 app.UseSwaggerUI(c =>
 {
-
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShopSphere.Api v1");
     c.RoutePrefix = "swagger";
 });
@@ -127,6 +145,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseResponseCaching();
-
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapControllers();
 app.Run();
