@@ -1,5 +1,7 @@
 namespace ShopSphere.Domain.Entities;
 
+using System.Text.Json.Serialization;
+
 public class Product
 {
     public Guid Id { get; set; } = Guid.NewGuid();
@@ -9,6 +11,7 @@ public class Product
     public int Stock { get; set; }
 
     public Guid CategoryId { get; set; }
+    [JsonIgnore]
     public Category Category { get; set; } = default!;  
 
 

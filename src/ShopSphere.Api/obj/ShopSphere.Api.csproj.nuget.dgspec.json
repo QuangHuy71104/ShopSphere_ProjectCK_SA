@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj": {}
+    "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj": {}
   },
   "projects": {
-    "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj": {
+    "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj",
+        "projectUniqueName": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj",
         "projectName": "ShopSphere.Api",
-        "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\obj\\",
+        "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\ShopSphere.Api.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +32,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj": {
-                "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj"
+              "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj": {
+                "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj"
               },
-              "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj": {
-                "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj"
+              "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj": {
+                "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj"
               }
             }
           }
@@ -119,21 +123,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj": {
+    "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj",
+        "projectUniqueName": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj",
         "projectName": "ShopSphere.Application",
-        "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\obj\\",
+        "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -147,8 +155,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj": {
-                "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj"
+              "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj": {
+                "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj"
               }
             }
           }
@@ -190,21 +198,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj": {
+    "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
+        "projectUniqueName": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
         "projectName": "ShopSphere.Domain",
-        "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\obj\\",
+        "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -251,21 +263,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj": {
+    "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj",
         "projectName": "ShopSphere.Infrastructure",
-        "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\obj\\",
+        "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -279,11 +295,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj": {
-                "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj"
+              "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj": {
+                "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Application\\ShopSphere.Application.csproj"
               },
-              "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj": {
-                "projectPath": "D:\\University\\SOFTWARE_ARCHITECTURE\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj"
+              "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj": {
+                "projectPath": "D:\\Hwng\\T7\\ShopSphere_ProjectCK_SA\\src\\ShopSphere.Domain\\ShopSphere.Domain.csproj"
               }
             }
           }
@@ -341,7 +357,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

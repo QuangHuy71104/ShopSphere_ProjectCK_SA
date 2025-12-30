@@ -9,24 +9,38 @@ public class CheckoutService
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IPaymentRepository _paymentRepository;
+    private readonly IProductRepository _productRepository;
     private readonly IEventPublisher _publisher;
 
     public CheckoutService(
         IOrderRepository orderRepository,
         IPaymentRepository paymentRepository,
+        IProductRepository productRepository,
         IEventPublisher publisher)
     {
         _orderRepository = orderRepository;
         _paymentRepository = paymentRepository;
+        _productRepository = productRepository;
         _publisher = publisher;
     }
 
-    public async Task<Order> StartCheckoutAsync(string buyerEmail, decimal total, CancellationToken cancellationToken)
+    public async Task<Order> StartCheckoutAsync(string buyerEmail, Guid productId, int quantity, CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(buyerEmail))
             throw new BadRequestException("Buyer email is required.");
-        if (total <= 0)
-            throw new BadRequestException("Total amount must be > 0.");
+        if (quantity <= 0)
+            throw new BadRequestException("Quantity must be > 0.");
+
+        var product = await _productRepository.GetByIdAsync(productId);
+        if (product == null)
+            throw new NotFoundException("Product not found.");
+        if (product.Stock < quantity)
+            throw new BadRequestException("Not enough stock.");
+
+        var total = product.Price * quantity;
+
+        product.Stock -= quantity;
+        await _productRepository.UpdateAsync(product);
 
         var order = new Order
         {
@@ -51,7 +65,10 @@ public class CheckoutService
             order.BuyerEmail,
             order.TotalAmount,
             order.Status,
-            paymentId = payment.Id
+            paymentId = payment.Id,
+            productId,
+            quantity,
+            product.Stock
         }, order.Id.ToString());
 
         return order;
